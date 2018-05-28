@@ -1,0 +1,18 @@
+.gradle
+/build/
+/target/
+/out/
+!gradle/wrapper/gradle-wrapper.jar
+
+### Eclipse ###
+.classpath
+.project
+.settings
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+/bin/
+
