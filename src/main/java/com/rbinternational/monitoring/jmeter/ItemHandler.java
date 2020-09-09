@@ -1,14 +1,15 @@
 package com.rbinternational.monitoring.jmeter;
 
-import io.undertow.server.HttpHandler;
-import io.undertow.server.HttpServerExchange;
-import io.undertow.util.Headers;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
-import javax.ws.rs.core.MediaType;
+
 import org.apache.jmeter.threads.JMeterContextService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import io.undertow.server.HttpHandler;
+import io.undertow.server.HttpServerExchange;
+import io.undertow.util.Headers;
 
 class ItemHandler implements HttpHandler {
 
@@ -20,7 +21,7 @@ class ItemHandler implements HttpHandler {
   public void handleRequest(HttpServerExchange exchange) throws Exception {
     log.info("Current state: " + createResponse());
 
-    exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, MediaType.TEXT_PLAIN);
+    exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "text/plain");
     exchange.getResponseSender().send(createResponse());
   }
 
